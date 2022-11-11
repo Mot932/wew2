@@ -1,11 +1,12 @@
 import random
+import makecart
 
-def play_casino(player):
+def play_casino():
     
     player = ("Александр Чергов", 100, 100, 0)
 
 
-user_money = player[3]
+user_money = hero[3]
 casino_money = 100
 
 while user_money and casino_money:

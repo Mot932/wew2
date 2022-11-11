@@ -1,16 +1,15 @@
 import os
-
+import makecart
 
 def visit_shop(player):
-    name = player[0]
+    
     hp = player[1]
     money = player[2]
-    potions = player[3]
+    potions = player[6]
 
     is_shop = True
     while is_shop:
         os.system("cls")
-        player = ("Александр", 100, 100, 0)
         print("--деньги--")
         print(money)
         print("--зелья--")
@@ -30,4 +29,4 @@ def visit_shop(player):
             else:
                 print("У ВАС НЕТ ДЕНЕГ!!!")
         elif answer == "2":
-            return(name, hp, money, potions)
+            return(player[0], player[1], player[2],player[3], player[5], money, potions)

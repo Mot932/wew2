@@ -1,6 +1,8 @@
 import os
 import game # импортируем файл game.
 
+
+
 def show_menu():
     while True:
         os.system("cls")

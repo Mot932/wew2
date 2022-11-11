@@ -1,6 +1,7 @@
 import os
 import shop
-
+import makecart
+import dice
 
 
 def start_new_game():
@@ -13,30 +14,21 @@ def start_new_game():
     """
     os.system("cls")
     print("Запустили новую игру из файла")
-
-    player = ("Александр Чергов", 100, 100, 0)
+    player = makecart.make_hero(name="Вася")
 
     # запускаем главный цикл игры
     is_game = True
     while is_game:
         os.system("cls")
 
-
-        print("--Имя--")
-        print(player[0])
-        print("--Здоровье--")
-        print(player[1])
-        print("--Деньги--")
-        print(player[2])
-        print("--Зелья--")
-        print(player[3])
-        print("----------")
+        makecart.show_hero(player)
+        
 
         print("-- ситуация:")
         print(f"{player[0]} приехал к камню.")
         print("-- варианты:")
         print("1 - поехать на битву")
-        print("2 - поехать играть в кости")
+        print("2 - поехать играть в казино")
         print("3 - поехать в лавку к ведьме")
         print("0 - выйти в главное меню")
 
@@ -45,7 +37,7 @@ def start_new_game():
         if answer == "1":
             pass
         elif answer == "2":
-            pass
+            hero = dice.play_casino(hero)
         elif answer == "3":
             player = shop.visit_shop(player)
         elif answer == "0":
